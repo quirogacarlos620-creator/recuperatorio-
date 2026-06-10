@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador Web de Evidencias OVNI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Departamento de Desclasificación</h1>
+        <h2>Clasificador Web de Evidencias OVNI</h2>
+        <p>Coordinador: HELDER LOPEZ | Paralelo: ss - a1</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio del Archivo</a></li>
+            <li><a href="https://www.war.gov/ufo/?releaseDate=Release+02" target="_blank">Base de Datos Oficial</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="glass-panel">
+            <h3>Ingresar Nueva Evidencia para Análisis</h3>
+            <form id="ufoForm">
+                <label for="nombre">Nombre del reporte:</label>
+                <input type="text" id="nombre" placeholder="Ej. Incidente de Roswell" required>
+
+                <label for="lugar">Lugar del avistamiento:</label>
+                <input type="text" id="lugar" placeholder="Ciudad, País" required>
+
+                <label for="testigos">Cantidad de testigos:</label>
+                <input type="number" id="testigos" min="0" required>
+
+                <label>¿Existe video?</label>
+                <select id="video">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+
+                <label>¿Existe imagen?</label>
+                <select id="imagen">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+
+                <label>¿Fue detectado por radar?</label>
+                <select id="radar">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+
+                <label>¿Hay explicación científica probable?</label>
+                <select id="explicacion">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="descripcion">Descripción breve:</label>
+                <textarea id="descripcion" rows="4" placeholder="Describe los detalles del fenómeno..." required></textarea>
+
+                <button type="button" id="btnClasificar">Clasificar Evidencia</button>
+                <button type="reset" id="btnReiniciar">Reiniciar Formulario</button>
+            </form>
+        </section>
+
+        <section id="resultadoSeccion" class="hidden">
+            <h3>Resultado del Sistema</h3>
+            <p id="resultadoTexto"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Archivos Desclasificados. Proyecto Individual.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
