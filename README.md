@@ -1,4 +1,3 @@
-# recuperatorio-
 # Clasificador Web de Evidencias OVNI
 
 Proyecto desarrollado para el examen recuperatorio de la materia Programación Web I.
@@ -19,6 +18,7 @@ Esta aplicación web funciona como un **Sistema de Clasificación de Evidencias 
 - **JavaScript:** Lógica de validación de campos, manipulación del DOM y cálculo de puntajes.
 
 ## Estructura del Repositorio
+
 proyecto-recuperatorio-ovni/
 │
 ├── css/
@@ -31,6 +31,7 @@ proyecto-recuperatorio-ovni/
 │   └── script.js         # Lógica de clasificación y DOM
 ├── index.html            # Interfaz principal
 └── README.md             # Documentación del proyecto
+
 ## Estudiante
 - **Nombre:** Quiroga Quisberth Carlos Alberto
 - **Materia:** Programación Web I
