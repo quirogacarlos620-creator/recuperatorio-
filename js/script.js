@@ -1,11 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ---- EFECTO MULTIMEDIA ----
+    const imagenes = document.querySelectorAll('.classified-img');
+    
+    imagenes.forEach(img => {
+        img.addEventListener('click', () => {
+            alert('Desencriptando archivo visual... Nivel de autorización verificado.');
+            // Quita el filtro de blanco y negro y le da un brillo de neón
+            img.style.filter = 'grayscale(0%) sepia(0%) contrast(100%)';
+            img.style.boxShadow = '0 0 15px #66fcf1';
+            img.style.border = '2px solid #66fcf1';
+        });
+    });
+    // ---------------------------
+
     const btnClasificar = document.getElementById('btnClasificar');
     const btnReiniciar = document.getElementById('btnReiniciar');
     const resultadoSeccion = document.getElementById('resultadoSeccion');
     const resultadoTexto = document.getElementById('resultadoTexto');
 
     btnClasificar.addEventListener('click', () => {
-        // 1. Validar campos (Obligatorio en la rúbrica)
         const nombre = document.getElementById('nombre').value.trim();
         const lugar = document.getElementById('lugar').value.trim();
         const testigos = parseInt(document.getElementById('testigos').value);
@@ -13,10 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(!nombre || !lugar || isNaN(testigos) || !descripcion) {
             alert("Acceso denegado: Por favor, completa todos los campos del reporte antes de clasificar.");
-            return; // Detiene la ejecución si falta algo
+            return; 
         }
 
-        // 2. Calcular puntaje
         let puntaje = 0;
 
         const video = document.getElementById('video').value;
@@ -33,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const explicacion = document.getElementById('explicacion').value;
         if(explicacion === 'no') puntaje += 3;
 
-        // 3. Determinar la clasificación y el color
         let clasificacion = '';
         let claseCSS = '';
 
@@ -48,15 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
             claseCSS = 'evidencia-fuerte';
         }
 
-        // 4. Mostrar en el DOM (innerHTML/textContent y cambio de estilos)
         resultadoTexto.textContent = `Puntaje de Confiabilidad: ${puntaje} pts - Nivel: ${clasificacion}`;
-        
-        // Aplica el efecto visual según el resultado y remueve el 'hidden'
         resultadoSeccion.className = `glass-panel ${claseCSS}`; 
     });
 
     btnReiniciar.addEventListener('click', () => {
-        // Ocultar sección de resultados cuando se limpia el formulario
         resultadoSeccion.className = 'hidden';
+        
+        // Opcional: Volver a encriptar las imágenes al reiniciar
+        imagenes.forEach(img => {
+            img.style.filter = 'grayscale(100%) sepia(50%) contrast(120%)';
+            img.style.boxShadow = 'none';
+            img.style.border = 'none';
+        });
     });
 });
