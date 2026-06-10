@@ -28,6 +28,12 @@ header h1, header h2 {
     margin: 5px 0;
 }
 
+header p {
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.5;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -62,6 +68,68 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     margin-bottom: 20px;
 }
+
+/* --- SECCIÓN MULTIMEDIA --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.media-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--neon-dark);
+    border-radius: 5px;
+    cursor: pointer;
+    background: #000;
+}
+
+.media-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    /* Efecto de foto de expediente secreto */
+    filter: grayscale(100%) sepia(50%) contrast(120%);
+    transition: all 0.5s ease;
+}
+
+.media-item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--neon-accent);
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+.video-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.video-container h4 {
+    color: var(--neon-accent);
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    border: 1px solid var(--neon-dark);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+    max-width: 100%;
+}
+/* ------------------------- */
 
 form {
     display: flex;
@@ -133,7 +201,7 @@ button:hover {
     box-shadow: 0 0 15px var(--neon-accent);
 }
 
-/* Media Queries (Responsividad) */
+/* Responsividad */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
