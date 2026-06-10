@@ -212,36 +212,3 @@ button:hover {
         padding: 10px;
     }
 }
-/* --- TABLA DE GUÍA NEÓN --- */
-.neon-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.neon-table th, .neon-table td {
-    border: 1px solid var(--neon-dark);
-    padding: 8px;
-    text-align: left;
-}
-
-.neon-table th {
-    background-color: rgba(69, 162, 158, 0.2);
-    color: var(--neon-accent);
-}
-
-.niveles-guia {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.9em;
-}
-
-.badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.badge.debil { border: 1px solid #ff4c4c; color: #ff4c4c; }
-.badge.moderada { border: 1px solid #ffb732; color: #ffb732; }
-.badge.fuerte { border: 1px solid #66fcf1; color: #66fcf1; }
