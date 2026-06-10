@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             claseCSS = 'evidencia-fuerte';
         }
 
-        resultadoTexto.textContent = `Puntaje de Confiabilidad: ${puntaje} pts - Nivel: ${clasificacion}`;
+        resultadoTexto.textContent = `Nivel: ${clasificacion}`;
         resultadoSeccion.className = `glass-panel ${claseCSS}`; 
     });
 
